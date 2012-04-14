@@ -13,8 +13,23 @@
 # and
 #   about_triangle_project_2.rb
 #
+
 def triangle(a, b, c)
-  # WRITE THIS CODE
+  sides = [a, b, c]
+
+  begin
+    raise TriangleError if sides.index{ |s| s < 1 }
+
+    sides = sides.uniq!
+    if sides == nil
+      :scalene
+    elsif sides.length == 1
+      :equilateral
+    else
+      :isosceles
+    end
+
+  end
 end
 
 # Error class used in part 2.  No need to change this code.
